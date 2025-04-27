@@ -11,7 +11,7 @@ Edit `src/consts.ts`
 Customize the base site
 
 ```ts 
-// src/consts.ts
+// src/consts.ts 
 
 export const SITE: Site = {
   NAME: "Astro Nano",
