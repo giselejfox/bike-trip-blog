@@ -5,6 +5,7 @@ import Container from "@components/Container.astro";
 import FormattedDate from "@components/FormattedDate.astro";
 import { readingTime } from "@lib/utils";
 import BackToPrev from "@components/BackToPrev.astro";
+import RideWithGPSMap from "@components/RideWithGPSMap";
 
 export async function getStaticPaths() {
   const posts = (await getCollection("blog"))
@@ -43,7 +44,11 @@ const { Content } = await post.render();
       </div>
     </div>
     <article class="animate">
+      <p class="italic">TLDR: <a href="#route-map">click here</a> to skip to the route map </p>
       <Content />
+      <h2 id="route-map">Route Map</h2>
+      <RideWithGPSMap link={post.data.ride_with_gps} />
+      <p class="italic">Disclaimer: In order to be a good online citizen and not share *too much* personal information, the starting and ending place of each trip are marked in reference to the nearest <a href="https://www.soundtransit.org/ride-with-us/stations/link-light-rail-stations">link stop</a>.</p>
     </article>
   </Container>
 </PageLayout>

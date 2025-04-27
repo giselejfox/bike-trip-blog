@@ -9,6 +9,7 @@ const blog = defineCollection({
     draft: z.boolean().optional(),
     miles_by_bike: z.number().optional(),
     minutes_by_transit: z.number().optional(),
+    ride_with_gps: z.string().optional(),
   }),
 });
 
