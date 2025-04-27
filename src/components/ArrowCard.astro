@@ -8,20 +8,31 @@ type Props = {
 const { entry } = Astro.props;
 ---
 
-<a href={`/${entry.collection}/${entry.slug}`} class="relative group flex flex-nowrap py-3 px-4 pr-10 rounded-lg border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">
-  <div class="flex flex-col flex-1 truncate">
-    <div class="font-semibold">
-      {entry.data.title}
-    </div>
-    <div class="text-sm">
-      {entry.data.description}
-    </div>
+<a href={`/${entry.collection}/${entry.slug}`} class="relative group flex flex-nowrap pr-4 pr-10 rounded-lg border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 text-black dark:text-white transition-colors duration-300 ease-in-out">
+  <div class="">
+    <img 
+      src="https://i.etsystatic.com/22332666/r/il/19d92f/2399371443/il_1080xN.2399371443_7vye.jpg"
+      alt={entry.data.title} 
+      class="w-20 h-full rounded-l-md object-cover object-center mr-4" 
+      loading="lazy" 
+    />
   </div>
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    viewBox="0 0 24 24"
-    class="absolute top-1/2 right-2 -translate-y-1/2 size-5 stroke-2 fill-none stroke-current">
-    <line x1="5" y1="12" x2="19" y2="12" class="translate-x-3 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out" />
-    <polyline points="12 5 19 12 12 19" class="-translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out" />
-  </svg>
+  <div>
+    <div class="flex flex-col flex-1 truncate py-3 pl-1">
+      <div class="font-semibold">
+        {entry.data.title}
+      </div>
+      <div class="text-sm text-stone-500 dark:text-stone-400 italic">
+        {entry.data.miles_by_bike} miles by bike & {entry.data.minutes_by_transit} minutes of transit
+      </div>
+    </div>
+    <svg 
+      xmlns="http://www.w3.org/2000/svg" 
+      viewBox="0 0 24 24"
+      class="absolute top-1/2 right-2 -translate-y-1/2 size-5 stroke-2 fill-none stroke-current">
+      <line x1="5" y1="12" x2="19" y2="12" class="translate-x-3 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out" />
+      <polyline points="12 5 19 12 12 19" class="-translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out" />
+    </svg>
+  </div>
+
 </a>
